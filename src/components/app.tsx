@@ -1,4 +1,5 @@
 import Counter from './counter'
+import FlightBooker from './flight-booker'
 import TemperatureConverter from './temperature-converter'
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
       <div className='guis'>
         <Counter />
         <TemperatureConverter />
+        <FlightBooker />
       </div>
     </div>
   )
