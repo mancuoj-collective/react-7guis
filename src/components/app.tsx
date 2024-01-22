@@ -1,6 +1,10 @@
 import Counter from './counter'
-import FlightBooker from './flight-booker'
 import TemperatureConverter from './temperature-converter'
+import FlightBooker from './flight-booker'
+import Timer from './timer'
+import CRUD from './crud'
+import CircleDrawer from './circle-drawer'
+import Cells from './cells'
 
 export default function App() {
   return (
@@ -10,6 +14,10 @@ export default function App() {
         <Counter />
         <TemperatureConverter />
         <FlightBooker />
+        <Timer />
+        <CRUD />
+        <CircleDrawer />
+        <Cells />
       </div>
     </div>
   )
