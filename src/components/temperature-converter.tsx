@@ -4,12 +4,12 @@ export default function TemperatureConverter() {
   const [cel, setCel] = useState(0)
   const [fah, setFah] = useState(32)
 
-  const handleCelChange = (val: number) => {
+  function handleCelChange(val: number) {
     setCel(val)
     setFah(val * (9 / 5) + 32)
   }
 
-  const handleFahChange = (val: number) => {
+  function handleFahChange(val: number) {
     setFah(val)
     setCel((val - 32) * (5 / 9))
   }
