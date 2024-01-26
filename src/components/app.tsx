@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="app">
       <h1 className="title">React 7GUIs</h1>
-      <div className='guis'>
+      <div className="guis">
         <Counter />
         <TemperatureConverter />
         <FlightBooker />
