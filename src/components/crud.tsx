@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function CRUD() {
-  const [names, setNames] = useState(['Emil, Hans', 'Mustermann, Max', 'Tisch, Roman'])
+  const [names] = useState(['Emil, Hans', 'Mustermann, Max', 'Tisch, Roman'])
   const [prefix, setPrefix] = useState('')
   const [first, setFirst] = useState('')
   const [last, setLast] = useState('')
