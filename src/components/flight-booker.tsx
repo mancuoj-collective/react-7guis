@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { useState } from 'react'
 
 export default function FlightBooker() {
@@ -35,11 +36,16 @@ export default function FlightBooker() {
         <option value="return">Return</option>
       </select>
       <input type="date" value={departureDate} onChange={e => setDepartureDate(e.target.value)} />
-      <input type="date" value={returnDate} onChange={e => setReturnDate(e.target.value)} disabled={!isReturn} />
+      <input
+        type="date"
+        value={returnDate}
+        onChange={e => setReturnDate(e.target.value)}
+        className={clsx({ red: !canBook })}
+        disabled={!isReturn}
+      />
       <button onClick={handleBook} disabled={!canBook}>
         Book
       </button>
-      {!canBook && <p style={{ color: 'red' }}>Return date must be after departure date.</p>}
     </div>
   )
 }

@@ -20,6 +20,10 @@ option {
   text-align: center;
 }
 
+.red {
+  background-color: red;
+}
+
 .guis {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
