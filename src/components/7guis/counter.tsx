@@ -6,7 +6,7 @@ export default function Counter() {
   return (
     <div className="counter">
       <span>{count}</span>
-      <button onClick={() => setCount(c => c + 1)}>Count</button>
+      <button onClick={() => setCount((c) => c + 1)}>Count</button>
     </div>
   )
 }

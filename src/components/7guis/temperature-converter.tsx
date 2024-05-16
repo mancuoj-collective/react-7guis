@@ -16,9 +16,9 @@ export default function TemperatureConverter() {
 
   return (
     <div className="converter">
-      <input type="number" value={cel} onChange={e => handleCelChange(+e.target.value)} />
+      <input type="number" value={cel} onChange={(e) => handleCelChange(+e.target.value)} />
       <span>Celsius = </span>
-      <input type="number" value={fah} onChange={e => handleFahChange(+e.target.value)} />
+      <input type="number" value={fah} onChange={(e) => handleFahChange(+e.target.value)} />
       <span>Fahrenheit</span>
     </div>
   )

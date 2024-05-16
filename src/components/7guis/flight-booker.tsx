@@ -25,21 +25,21 @@ export default function FlightBooker() {
     alert(
       isReturn
         ? `You have booked a return flight leaving on ${departureDate} and returning on ${returnDate}.`
-        : `You have booked a one-way flight leaving on ${departureDate}.`
+        : `You have booked a one-way flight leaving on ${departureDate}.`,
     )
   }
 
   return (
     <div className="booker">
-      <select value={flightType} onChange={e => setFlightType(e.target.value)}>
+      <select value={flightType} onChange={(e) => setFlightType(e.target.value)}>
         <option value="one-way">One-way Flight</option>
         <option value="return">Return</option>
       </select>
-      <input type="date" value={departureDate} onChange={e => setDepartureDate(e.target.value)} />
+      <input type="date" value={departureDate} onChange={(e) => setDepartureDate(e.target.value)} />
       <input
         type="date"
         value={returnDate}
-        onChange={e => setReturnDate(e.target.value)}
+        onChange={(e) => setReturnDate(e.target.value)}
         className={clsx({ red: !canBook })}
         disabled={!isReturn}
       />

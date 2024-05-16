@@ -2,18 +2,21 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "format": "prettier --cache --write ."
   },
   "dependencies": {
-    "clsx": "^2.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.11"
-  }
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.6.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  },
+  "prettier": "@mancuoj/prettier-config"
 }
