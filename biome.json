@@ -15,7 +15,8 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noArrayIndexKey": "off"
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "off"
       },
       "complexity": {
         "noVoid": "error",
@@ -23,7 +24,8 @@
         "useSimplifiedLogicExpression": "warn"
       },
       "correctness": {
-        "useHookAtTopLevel": "error"
+        "useHookAtTopLevel": "error",
+        "useExhaustiveDependencies": "off"
       },
       "style": {
         "noNonNullAssertion": "off",
