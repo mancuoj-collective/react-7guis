@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { Counter } from '~/components/7guis/counter'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -6,8 +7,8 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div className="text-center">
-      <span className="i-carbon-arrow-right size-20" />
+    <div>
+      <Counter />
     </div>
   )
 }
