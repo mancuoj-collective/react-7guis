@@ -45,8 +45,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.3.3)(react@18.3.1)
       '@tanstack/react-form':
-        specifier: ^0.20.2
-        version: 0.20.2(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.20.3
+        version: 0.20.3(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query':
         specifier: ^5.40.0
         version: 5.40.0(react@18.3.1)
@@ -57,8 +57,8 @@ importers:
         specifier: ^8.17.3
         version: 8.17.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/zod-form-adapter':
-        specifier: ^0.20.2
-        version: 0.20.2(zod@3.23.8)
+        specifier: ^0.20.3
+        version: 0.20.3(zod@3.23.8)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -78,8 +78,8 @@ importers:
         specifier: ^2.8.2
         version: 2.8.2(@types/react@18.3.3)(react@18.3.1)
       jotai-dark:
-        specifier: ^0.3.0
-        version: 0.3.0(jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))(react@18.3.1)
+        specifier: ^0.3.1
+        version: 0.3.1(jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))(react@18.3.1)
       jotai-effect:
         specifier: ^1.0.0
         version: 1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))
@@ -118,20 +118,20 @@ importers:
         specifier: ^1.1.34
         version: 1.1.34
       '@iconify-json/lucide':
-        specifier: ^1.1.188
-        version: 1.1.188
+        specifier: ^1.1.189
+        version: 1.1.189
       '@iconify-json/simple-icons':
-        specifier: ^1.1.103
-        version: 1.1.103
+        specifier: ^1.1.104
+        version: 1.1.104
       '@mancuoj/prettier-config':
         specifier: ^0.2.0
         version: 0.2.0(prettier@3.3.0)
       '@tanstack/router-vite-plugin':
         specifier: ^1.34.8
-        version: 1.34.8(vite@5.2.12(@types/node@20.13.0))
+        version: 1.34.8(vite@5.2.12(@types/node@20.14.0))
       '@types/node':
-        specifier: ^20.13.0
-        version: 20.13.0
+        specifier: ^20.14.0
+        version: 20.14.0
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -140,7 +140,7 @@ importers:
         version: 18.3.0
       '@vitejs/plugin-react-swc':
         specifier: ^3.7.0
-        version: 3.7.0(vite@5.2.12(@types/node@20.13.0))
+        version: 3.7.0(vite@5.2.12(@types/node@20.14.0))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
@@ -158,7 +158,7 @@ importers:
         version: 5.4.5
       vite:
         specifier: ^5.2.12
-        version: 5.2.12(@types/node@20.13.0)
+        version: 5.2.12(@types/node@20.14.0)
 
 packages:
 
@@ -558,11 +558,11 @@ packages:
   '@iconify-json/carbon@1.1.34':
     resolution: {integrity: sha512-azvhc5HP+CilSrzSEfP4MezsG5n4tj+vIJLADhqCbFM1BOAmyDe/K1lTL9GLDluybsCvSqb15+6AIRb1jtKhpQ==}
 
-  '@iconify-json/lucide@1.1.188':
-    resolution: {integrity: sha512-yJNoU7vX11OvdeSKBiAvmbk/etAq2HPCZQkZX1U687NZhn8dTfx1PfyNhPxtJilrd288XGDKK+NQgygcZ+Ho4g==}
+  '@iconify-json/lucide@1.1.189':
+    resolution: {integrity: sha512-XUmcSwfAhi4ctdbdxMikhy4avUjxSYePHBSyZiVHPPmbOPGM3KjDpP/UscZA49yPAmkFqvb6lUa3L1RHAOn0rQ==}
 
-  '@iconify-json/simple-icons@1.1.103':
-    resolution: {integrity: sha512-u5r+Sirr0CME+Q0qUr6OgjErFpTSsGyttJbkfL5BUcRwELgN9FpCj8zYXySKTqCP1ttWIgAAiTC4ZKGoN5Gehw==}
+  '@iconify-json/simple-icons@1.1.104':
+    resolution: {integrity: sha512-986r56QHsIqa84MdGpV+tUJVhJjDXFb1OfFJZKMDiuQOi0CacK5QsM3if5RNjmT9WhrQtm5uTRHy4/4u7Cb9oQ==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1151,8 +1151,8 @@ packages:
   '@swc/types@0.1.7':
     resolution: {integrity: sha512-scHWahbHF0eyj3JsxG9CFJgFdFNaVQCNAimBlT6PzS3n/HptxqREjsm4OH6AN3lYcffZYSPxXW8ua2BEHp0lJQ==}
 
-  '@tanstack/form-core@0.20.2':
-    resolution: {integrity: sha512-YaFjGsNZIVuxsWboPeeeY4ijPmeMUaeUlNovddK6AuroxqVQ7pl5MMK3saHHLcOfYgKZwGfXVyrMOG5EjxU3JQ==}
+  '@tanstack/form-core@0.20.3':
+    resolution: {integrity: sha512-oFu1fBSQyDL7fkvXxP2ZPnXWFcac973xghNPfiF8DMUzJ7MBFe4sZHB5HS6l3YGWtMFnqRwW4sFIhHLGKtDVJA==}
 
   '@tanstack/history@1.31.16':
     resolution: {integrity: sha512-rahAZXlR879P7dngDH7BZwGYiODA9D5Hqo6nUHn9GAURcqZU5IW0ZiT54dPtV5EPES7muZZmknReYueDHs7FFQ==}
@@ -1161,8 +1161,8 @@ packages:
   '@tanstack/query-core@5.40.0':
     resolution: {integrity: sha512-eD8K8jsOIq0Z5u/QbvOmfvKKE/XC39jA7yv4hgpl/1SRiU+J8QCIwgM/mEHuunQsL87dcvnHqSVLmf9pD4CiaA==}
 
-  '@tanstack/react-form@0.20.2':
-    resolution: {integrity: sha512-5SVb2ix5RXgVRogKXlwXiGewRa7LfKonIsPAHEnrqXUAEuheIoBTwspUYNY2SX/OMWYkVTE5nbujCjRc/+lK5w==}
+  '@tanstack/react-form@0.20.3':
+    resolution: {integrity: sha512-49x2ol9nnDVCVU6pyCnJG0j5U2fBx/eng3IM28lUSUwrveNB01ymv3TMeLJbGbH9HSlpTwLdKZgn2lzKdBggzQ==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
 
@@ -1215,8 +1215,8 @@ packages:
     resolution: {integrity: sha512-mPBodDGVL+fl6d90wUREepHa/7lhsghg2A3vFpakEhrhtbIlgNAZiMr7ccTgak5qbHqF14Fwy+W1yFWQt+WmYQ==}
     engines: {node: '>=12'}
 
-  '@tanstack/zod-form-adapter@0.20.2':
-    resolution: {integrity: sha512-3FR5ioz03MNhzrCmokXDYpxx+kiblc4mbdMhv3Oye3BIaJl8g+/pAFRNGGZaT4mFTF4aIp5dsgbsw6Z6t04zOQ==}
+  '@tanstack/zod-form-adapter@0.20.3':
+    resolution: {integrity: sha512-ghsytT4isgelVER6Qdty6ZVdD8SZfT8TuhNHrbC2snVrqQxrSdqQFr5JPvVMycs06y5l3OLspW97HkIO3d7lBw==}
     peerDependencies:
       zod: ^3.x
 
@@ -1235,8 +1235,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/node@20.13.0':
-    resolution: {integrity: sha512-FM6AOb3khNkNIXPnHFDYaHerSv8uN22C91z098AnGccVu+Pcdhi+pNUFDi0iLmPIsVE0JBD0KVS7mzUYt4nRzQ==}
+  '@types/node@20.14.0':
+    resolution: {integrity: sha512-5cHBxFGJx6L4s56Bubp4fglrEpmyJypsqI6RgzMfBHWUJQGWAAi8cWcgetEbZXHYXo9C2Fa4EEds/uSyS4cxmA==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -1572,8 +1572,8 @@ packages:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
 
-  jotai-dark@0.3.0:
-    resolution: {integrity: sha512-Vuhymer1VLaAjSW+hLowZBZa0FSKMamo3xajXubCr0Jdnp5P80vrh/5s29EQ2cp3eSa9weuUy+kdoMKEDdp/sA==}
+  jotai-dark@0.3.1:
+    resolution: {integrity: sha512-6yW4qk+xG9kv/YkDr4aCWHMPQZHd+q/p1orFzg5NFJwlBCfK/UBlUJfPTRLMdbMf1+U5u4pBQWPGa7ZHOqSFBQ==}
     peerDependencies:
       foxact: ^0.2.33
       jotai: '>=2.5.0'
@@ -2473,11 +2473,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.1.188':
+  '@iconify-json/lucide@1.1.189':
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/simple-icons@1.1.103':
+  '@iconify-json/simple-icons@1.1.104':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3060,7 +3060,7 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tanstack/form-core@0.20.2':
+  '@tanstack/form-core@0.20.3':
     dependencies:
       '@tanstack/store': 0.3.1
 
@@ -3068,9 +3068,9 @@ snapshots:
 
   '@tanstack/query-core@5.40.0': {}
 
-  '@tanstack/react-form@0.20.2(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-form@0.20.3(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/form-core': 0.20.2
+      '@tanstack/form-core': 0.20.3
       '@tanstack/react-store': 0.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       decode-formdata: 0.4.0
       react: 18.3.1
@@ -3118,7 +3118,7 @@ snapshots:
       prettier: 3.3.0
       zod: 3.23.8
 
-  '@tanstack/router-vite-plugin@1.34.8(vite@5.2.12(@types/node@20.13.0))':
+  '@tanstack/router-vite-plugin@1.34.8(vite@5.2.12(@types/node@20.14.0))':
     dependencies:
       '@babel/core': 7.24.6
       '@babel/generator': 7.24.6
@@ -3134,7 +3134,7 @@ snapshots:
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.6
-      '@vitejs/plugin-react': 4.3.0(vite@5.2.12(@types/node@20.13.0))
+      '@vitejs/plugin-react': 4.3.0(vite@5.2.12(@types/node@20.14.0))
       zod: 3.23.8
     transitivePeerDependencies:
       - supports-color
@@ -3146,9 +3146,9 @@ snapshots:
 
   '@tanstack/table-core@8.17.3': {}
 
-  '@tanstack/zod-form-adapter@0.20.2(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.20.3(zod@3.23.8)':
     dependencies:
-      '@tanstack/form-core': 0.20.2
+      '@tanstack/form-core': 0.20.3
       zod: 3.23.8
 
   '@types/babel__core@7.20.5':
@@ -3174,7 +3174,7 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@20.13.0':
+  '@types/node@20.14.0':
     dependencies:
       undici-types: 5.26.5
 
@@ -3189,21 +3189,21 @@ snapshots:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
 
-  '@vitejs/plugin-react-swc@3.7.0(vite@5.2.12(@types/node@20.13.0))':
+  '@vitejs/plugin-react-swc@3.7.0(vite@5.2.12(@types/node@20.14.0))':
     dependencies:
       '@swc/core': 1.5.24
-      vite: 5.2.12(@types/node@20.13.0)
+      vite: 5.2.12(@types/node@20.14.0)
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitejs/plugin-react@4.3.0(vite@5.2.12(@types/node@20.13.0))':
+  '@vitejs/plugin-react@4.3.0(vite@5.2.12(@types/node@20.14.0))':
     dependencies:
       '@babel/core': 7.24.6
       '@babel/plugin-transform-react-jsx-self': 7.24.6(@babel/core@7.24.6)
       '@babel/plugin-transform-react-jsx-source': 7.24.6(@babel/core@7.24.6)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.12(@types/node@20.13.0)
+      vite: 5.2.12(@types/node@20.14.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -3505,7 +3505,7 @@ snapshots:
 
   jiti@1.21.0: {}
 
-  jotai-dark@0.3.0(jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))(react@18.3.1):
+  jotai-dark@0.3.1(jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))(react@18.3.1):
     optionalDependencies:
       jotai: 2.8.2(@types/react@18.3.3)(react@18.3.1)
       jotai-effect: 1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))
@@ -3935,13 +3935,13 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@5.2.12(@types/node@20.13.0):
+  vite@5.2.12(@types/node@20.14.0):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.13.0
+      '@types/node': 20.14.0
       fsevents: 2.3.3
 
   which@2.0.2:
