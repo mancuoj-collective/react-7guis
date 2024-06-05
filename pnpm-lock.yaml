@@ -48,11 +48,11 @@ importers:
         specifier: ^0.20.3
         version: 0.20.3(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query':
-        specifier: ^5.40.0
-        version: 5.40.0(react@18.3.1)
+        specifier: ^5.40.1
+        version: 5.40.1(react@18.3.1)
       '@tanstack/react-router':
-        specifier: ^1.34.9
-        version: 1.34.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.35.1
+        version: 1.35.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-table':
         specifier: ^8.17.3
         version: 8.17.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -75,14 +75,14 @@ importers:
         specifier: ^11.2.10
         version: 11.2.10(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jotai:
-        specifier: ^2.8.2
-        version: 2.8.2(@types/react@18.3.3)(react@18.3.1)
+        specifier: ^2.8.3
+        version: 2.8.3(@types/react@18.3.3)(react@18.3.1)
       jotai-dark:
         specifier: ^0.3.1
-        version: 0.3.1(jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))(react@18.3.1)
+        version: 0.3.1(jotai-effect@1.0.0(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1))(react@18.3.1)
       jotai-effect:
         specifier: ^1.0.0
-        version: 1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))
+        version: 1.0.0(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1))
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -112,8 +112,8 @@ importers:
         specifier: 1.7.3
         version: 1.7.3
       '@egoist/tailwindcss-icons':
-        specifier: ^1.8.0
-        version: 1.8.0(tailwindcss@3.4.3)
+        specifier: ^1.8.1
+        version: 1.8.1(tailwindcss@3.4.3)
       '@iconify-json/carbon':
         specifier: ^1.1.34
         version: 1.1.34
@@ -125,13 +125,13 @@ importers:
         version: 1.1.104
       '@mancuoj/prettier-config':
         specifier: ^0.2.0
-        version: 0.2.0(prettier@3.3.0)
+        version: 0.2.0(prettier@3.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.34.8
-        version: 1.34.8(vite@5.2.12(@types/node@20.14.0))
+        version: 1.34.8(vite@5.2.12(@types/node@20.14.2))
       '@types/node':
-        specifier: ^20.14.0
-        version: 20.14.0
+        specifier: ^20.14.2
+        version: 20.14.2
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -140,7 +140,7 @@ importers:
         version: 18.3.0
       '@vitejs/plugin-react-swc':
         specifier: ^3.7.0
-        version: 3.7.0(vite@5.2.12(@types/node@20.14.0))
+        version: 3.7.0(vite@5.2.12(@types/node@20.14.2))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
@@ -148,8 +148,8 @@ importers:
         specifier: ^8.4.38
         version: 8.4.38
       prettier:
-        specifier: ^3.3.0
-        version: 3.3.0
+        specifier: ^3.3.1
+        version: 3.3.1
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
@@ -158,7 +158,7 @@ importers:
         version: 5.4.5
       vite:
         specifier: ^5.2.12
-        version: 5.2.12(@types/node@20.14.0)
+        version: 5.2.12(@types/node@20.14.2)
 
 packages:
 
@@ -391,8 +391,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@egoist/tailwindcss-icons@1.8.0':
-    resolution: {integrity: sha512-75LfllKL2lq0sGH+wcpsn/sLtJ0kMkDWmcZTLAB76QLDTmfsFu4QHwZVbtCD2woGyKl9c8KvtOUW9JSjRqOVtA==}
+  '@egoist/tailwindcss-icons@1.8.1':
+    resolution: {integrity: sha512-hqZeASrhT6BOeaBHYDPB0yBH/zgMKqmm7y2Rsq0c4iRnNVv1RWEiXMBMJB38JsDMTHME450FKa/wvdaIhED+Iw==}
     peerDependencies:
       tailwindcss: '*'
 
@@ -1166,13 +1166,13 @@ packages:
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
 
-  '@tanstack/react-query@5.40.0':
-    resolution: {integrity: sha512-iv/W0Axc4aXhFzkrByToE1JQqayxTPNotCoSCnarR/A1vDIHaoKpg7FTIfP3Ev2mbKn1yrxq0ZKYUdLEJxs6Tg==}
+  '@tanstack/react-query@5.40.1':
+    resolution: {integrity: sha512-gOcmu+gpFd2taHrrgMM9RemLYYEDYfsCqszxCC0xtx+csDa4R8t7Hr7SfWXQP13S2sF+mOxySo/+FNXJFYBqcA==}
     peerDependencies:
       react: ^18.0.0
 
-  '@tanstack/react-router@1.34.9':
-    resolution: {integrity: sha512-dU7rkiWQTH7glJIcnUcFezkmANzqQwlgRiJFiHJOPjYSoKVGI9dWQMbNc8W5d4JjXB/Nhh0QOiI/+GoYZ3WrhA==}
+  '@tanstack/react-router@1.35.1':
+    resolution: {integrity: sha512-hdQynBRSnOF/D06INIAxQY8gR36I/RIVdrIyQeoFCqYZEWvjEtGy7yWtXUbpbb4paisdHnH1rbBHlNk+UYBXvQ==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16.8'
@@ -1235,8 +1235,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/node@20.14.0':
-    resolution: {integrity: sha512-5cHBxFGJx6L4s56Bubp4fglrEpmyJypsqI6RgzMfBHWUJQGWAAi8cWcgetEbZXHYXo9C2Fa4EEds/uSyS4cxmA==}
+  '@types/node@20.14.2':
+    resolution: {integrity: sha512-xyu6WAMVwv6AKFLB+e/7ySZVr/0zLCzOa7rSpq6jNwpqOrUbcACDWC+53d4n2QHOnDou0fbIsg8wZu/sxrnI4Q==}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -1594,8 +1594,8 @@ packages:
     peerDependencies:
       jotai: '>=2.5.0'
 
-  jotai@2.8.2:
-    resolution: {integrity: sha512-AU+EU82YqP94izfbGYQQL3oa/06gmn+Ijf/CKx0QybAURtbqh2e4N6zA2fxeIh0JEUgASF6z5IhagJ8NicR95A==}
+  jotai@2.8.3:
+    resolution: {integrity: sha512-pR4plVvdbzB6zyt7VLLHPMAkcRSKhRIvZKd+qkifQLa3CEziEo1uwZjePj4acTmQrboiISBlYSdCz3gWcr1Nkg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -1807,8 +1807,8 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier@3.3.0:
-    resolution: {integrity: sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==}
+  prettier@3.3.1:
+    resolution: {integrity: sha512-7CAwy5dRsxs8PHXT3twixW9/OEll8MLE0VRPCJyl7CkS6VHGPSlsVaWTiASPTyGyYRyApxlaWTzwUxVNrhcwDg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2372,7 +2372,7 @@ snapshots:
   '@biomejs/cli-win32-x64@1.7.3':
     optional: true
 
-  '@egoist/tailwindcss-icons@1.8.0(tailwindcss@3.4.3)':
+  '@egoist/tailwindcss-icons@1.8.1(tailwindcss@3.4.3)':
     dependencies:
       '@iconify/utils': 2.1.24
       tailwindcss: 3.4.3
@@ -2528,11 +2528,11 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.0.8
 
-  '@mancuoj/prettier-config@0.2.0(prettier@3.3.0)':
+  '@mancuoj/prettier-config@0.2.0(prettier@3.3.1)':
     dependencies:
       '@antfu/install-pkg': 0.3.3
       picocolors: 1.0.1
-      prettier: 3.3.0
+      prettier: 3.3.1
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -3079,12 +3079,12 @@ snapshots:
       - '@types/react'
       - react-dom
 
-  '@tanstack/react-query@5.40.0(react@18.3.1)':
+  '@tanstack/react-query@5.40.1(react@18.3.1)':
     dependencies:
       '@tanstack/query-core': 5.40.0
       react: 18.3.1
 
-  '@tanstack/react-router@1.34.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-router@1.35.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.31.16
       '@tanstack/react-store': 0.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3115,10 +3115,10 @@ snapshots:
 
   '@tanstack/router-generator@1.34.8':
     dependencies:
-      prettier: 3.3.0
+      prettier: 3.3.1
       zod: 3.23.8
 
-  '@tanstack/router-vite-plugin@1.34.8(vite@5.2.12(@types/node@20.14.0))':
+  '@tanstack/router-vite-plugin@1.34.8(vite@5.2.12(@types/node@20.14.2))':
     dependencies:
       '@babel/core': 7.24.6
       '@babel/generator': 7.24.6
@@ -3134,7 +3134,7 @@ snapshots:
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.6
-      '@vitejs/plugin-react': 4.3.0(vite@5.2.12(@types/node@20.14.0))
+      '@vitejs/plugin-react': 4.3.0(vite@5.2.12(@types/node@20.14.2))
       zod: 3.23.8
     transitivePeerDependencies:
       - supports-color
@@ -3174,7 +3174,7 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@20.14.0':
+  '@types/node@20.14.2':
     dependencies:
       undici-types: 5.26.5
 
@@ -3189,21 +3189,21 @@ snapshots:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
 
-  '@vitejs/plugin-react-swc@3.7.0(vite@5.2.12(@types/node@20.14.0))':
+  '@vitejs/plugin-react-swc@3.7.0(vite@5.2.12(@types/node@20.14.2))':
     dependencies:
       '@swc/core': 1.5.24
-      vite: 5.2.12(@types/node@20.14.0)
+      vite: 5.2.12(@types/node@20.14.2)
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitejs/plugin-react@4.3.0(vite@5.2.12(@types/node@20.14.0))':
+  '@vitejs/plugin-react@4.3.0(vite@5.2.12(@types/node@20.14.2))':
     dependencies:
       '@babel/core': 7.24.6
       '@babel/plugin-transform-react-jsx-self': 7.24.6(@babel/core@7.24.6)
       '@babel/plugin-transform-react-jsx-source': 7.24.6(@babel/core@7.24.6)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.12(@types/node@20.14.0)
+      vite: 5.2.12(@types/node@20.14.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -3505,17 +3505,17 @@ snapshots:
 
   jiti@1.21.0: {}
 
-  jotai-dark@0.3.1(jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))(react@18.3.1):
+  jotai-dark@0.3.1(jotai-effect@1.0.0(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1)))(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1))(react@18.3.1):
     optionalDependencies:
-      jotai: 2.8.2(@types/react@18.3.3)(react@18.3.1)
-      jotai-effect: 1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1))
+      jotai: 2.8.3(@types/react@18.3.3)(react@18.3.1)
+      jotai-effect: 1.0.0(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1))
       react: 18.3.1
 
-  jotai-effect@1.0.0(jotai@2.8.2(@types/react@18.3.3)(react@18.3.1)):
+  jotai-effect@1.0.0(jotai@2.8.3(@types/react@18.3.3)(react@18.3.1)):
     dependencies:
-      jotai: 2.8.2(@types/react@18.3.3)(react@18.3.1)
+      jotai: 2.8.3(@types/react@18.3.3)(react@18.3.1)
 
-  jotai@2.8.2(@types/react@18.3.3)(react@18.3.1):
+  jotai@2.8.3(@types/react@18.3.3)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.3
       react: 18.3.1
@@ -3682,7 +3682,7 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
-  prettier@3.3.0: {}
+  prettier@3.3.1: {}
 
   queue-microtask@1.2.3: {}
 
@@ -3935,13 +3935,13 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite@5.2.12(@types/node@20.14.0):
+  vite@5.2.12(@types/node@20.14.2):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.14.0
+      '@types/node': 20.14.2
       fsevents: 2.3.3
 
   which@2.0.2:
