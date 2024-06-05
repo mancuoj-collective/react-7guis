@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Counter } from '~/components/7guis/counter'
+import { TemperatureConverter } from '~/components/7guis/temperature-converter'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -7,8 +8,9 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div>
+    <div className="flex flex-col gap-3">
       <Counter />
+      <TemperatureConverter />
     </div>
   )
 }
