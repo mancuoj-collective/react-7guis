@@ -21,7 +21,7 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@tanstack/react-form": "^0.20.3",
     "@tanstack/react-query": "^5.40.1",
-    "@tanstack/react-router": "^1.35.1",
+    "@tanstack/react-router": "^1.35.3",
     "@tanstack/react-table": "^8.17.3",
     "@tanstack/zod-form-adapter": "^0.20.3",
     "class-variance-authority": "^0.7.0",
@@ -44,8 +44,8 @@
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
     "@egoist/tailwindcss-icons": "^1.8.1",
-    "@iconify-json/carbon": "^1.1.34",
-    "@iconify-json/lucide": "^1.1.189",
+    "@iconify-json/carbon": "^1.1.35",
+    "@iconify-json/lucide": "^1.1.190",
     "@iconify-json/simple-icons": "^1.1.104",
     "@mancuoj/prettier-config": "^0.2.0",
     "@tanstack/router-vite-plugin": "^1.34.8",
@@ -56,9 +56,9 @@
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "prettier": "^3.3.1",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",
-    "vite": "^5.2.12"
+    "vite": "^5.2.13"
   },
   "prettier": "@mancuoj/prettier-config"
 }
