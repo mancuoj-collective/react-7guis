@@ -1,33 +1,37 @@
-import { useAtom } from 'jotai'
-import { celAtom, fahAtom } from '~/utils/atoms'
+import { useState } from 'react'
 import { Input } from '../ui/input'
-
-function Cel() {
-  const [value, setValue] = useAtom(celAtom)
-  return (
-    <div className="flex items-center gap-2">
-      <Input type="number" value={value} onChange={(e) => setValue(Number(e.target.value))} />
-      <p>Celsius</p>
-    </div>
-  )
-}
-
-function Fah() {
-  const [value, setValue] = useAtom(fahAtom)
-  return (
-    <div className="flex items-center gap-2">
-      <Input type="number" value={value} onChange={(e) => setValue(Number(e.target.value))} />
-      <p>Fahrenheit</p>
-    </div>
-  )
-}
+import { Separator } from '../ui/separator'
 
 export function TemperatureConverter() {
+  const [c, setC] = useState(5)
+  const [f, setF] = useState(41)
+
+  function handleC(e: React.ChangeEvent<HTMLInputElement>) {
+    const newC = Number(e.target.value)
+    setC(newC)
+    setF((newC * 9) / 5 + 32)
+  }
+
+  function handleF(e: React.ChangeEvent<HTMLInputElement>) {
+    const newF = Number(e.target.value)
+    setF(newF)
+    setC(((newF - 32) * 5) / 9)
+  }
+
   return (
-    <div className="flex items-center gap-2">
-      <Cel />
-      <p>=</p>
-      <Fah />
+    <div className="flex items-center gap-3">
+      <div className="relative">
+        <Input type="number" value={c} onChange={handleC} className="w-52 pr-10" />
+        <div className="absolute inset-y-0 right-3 flex items-center border-l pl-2">
+          <p className="text-sm text-foreground/70">℃</p>
+        </div>
+      </div>
+      <div className="relative">
+        <Input type="number" value={f} onChange={handleF} className="w-52 pr-10" />
+        <div className="absolute inset-y-0 right-3 flex items-center border-l pl-2">
+          <p className="text-sm text-foreground/70">℉</p>
+        </div>
+      </div>
     </div>
   )
 }

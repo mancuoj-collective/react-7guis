@@ -1,15 +1,12 @@
-import { useAtom } from 'jotai'
-import { countAtom } from '~/utils/atoms'
 import { Button } from '../ui/button'
+import { useState } from 'react'
 
 export function Counter() {
-  const [count, inc] = useAtom(countAtom)
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="flex items-center">
-      <Button onClick={inc} size="icon" variant="outline">
-        {count}
-      </Button>
-    </div>
+    <Button variant="outline" onClick={() => setCount(count + 1)}>
+      {count}
+    </Button>
   )
 }
