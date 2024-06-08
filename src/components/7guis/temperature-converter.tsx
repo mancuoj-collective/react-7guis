@@ -20,13 +20,13 @@ export function TemperatureConverter() {
   return (
     <div className="flex items-center gap-3">
       <div className="relative">
-        <Input type="number" value={c} onChange={handleC} className="w-52 pr-10" />
+        <Input type="number" value={c.toFixed(2)} onChange={handleC} className="w-52 pr-10" />
         <div className="absolute inset-y-0 right-3 flex items-center border-l pl-2">
           <p className="text-sm text-foreground/70">℃</p>
         </div>
       </div>
       <div className="relative">
-        <Input type="number" value={f} onChange={handleF} className="w-52 pr-10" />
+        <Input type="number" value={f.toFixed(2)} onChange={handleF} className="w-52 pr-10" />
         <div className="absolute inset-y-0 right-3 flex items-center border-l pl-2">
           <p className="text-sm text-foreground/70">℉</p>
         </div>

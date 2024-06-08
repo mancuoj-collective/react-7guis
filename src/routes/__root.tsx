@@ -10,7 +10,7 @@ export const Route = createRootRouteWithContext<{
 
 function Root() {
   return (
-    <div className="flex h-dvh flex-col items-center justify-center font-sans antialiased">
+    <div className="flex h-dvh flex-col items-center justify-center font-serif antialiased">
       <Outlet />
       <Toaster />
     </div>

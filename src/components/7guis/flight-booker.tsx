@@ -45,7 +45,7 @@ export function FlightBooker() {
         <SelectTrigger>
           <SelectValue placeholder="Select a flight type" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="font-serif">
           <SelectItem value="one-way">One-way Flight</SelectItem>
           <SelectItem value="return">Return Flight</SelectItem>
         </SelectContent>

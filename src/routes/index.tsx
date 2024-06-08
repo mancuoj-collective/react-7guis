@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Counter } from '~/components/7guis/counter'
 import { FlightBooker } from '~/components/7guis/flight-booker'
 import { TemperatureConverter } from '~/components/7guis/temperature-converter'
+import { Timer } from '~/components/7guis/timer'
 import { ThemeToggle } from '~/components/theme-toggle'
 
 export const Route = createFileRoute('/')({
@@ -15,6 +16,7 @@ function Index() {
       <Counter />
       <TemperatureConverter />
       <FlightBooker />
+      <Timer />
     </div>
   )
 }
