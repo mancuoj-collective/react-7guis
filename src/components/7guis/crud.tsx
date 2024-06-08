@@ -24,16 +24,44 @@ export function Crud() {
 
   const filteredList = list.filter((person) => person.surname.toLowerCase().includes(filter.toLowerCase()))
 
-  const handleSelect = (person: Person) => {
-    if (selectId === person.id) {
-      setSelectId(null)
-      setName('')
-      setSurname('')
+  const clearSelection = () => {
+    setSelectId(null)
+    setName('')
+    setSurname('')
+  }
+
+  const handleSelect = ({ id, name, surname }: Person) => {
+    if (selectId === id) {
+      clearSelection()
+    } else {
+      setSelectId(id)
+      setName(name)
+      setSurname(surname)
+    }
+  }
+
+  const handleCreate = () => {
+    if (!name || !surname) {
       return
     }
-    setSelectId(person.id)
-    setName(person.name)
-    setSurname(person.surname)
+    setList([...list, { id: list.length + 1, name, surname }])
+    clearSelection()
+  }
+
+  const handleUpdate = () => {
+    if (!selectId || !name || !surname) {
+      return
+    }
+    setList(list.map((person) => (person.id === selectId ? { ...person, name, surname } : person)))
+    clearSelection()
+  }
+
+  const handleDelete = () => {
+    if (!selectId) {
+      return
+    }
+    setList(list.filter((person) => person.id !== selectId))
+    clearSelection()
   }
 
   return (
@@ -57,13 +85,19 @@ export function Crud() {
       </div>
       <div className="flex w-40 flex-col justify-between">
         <div className="flex flex-col gap-3">
-          <Input placeholder="Name" value={name} />
-          <Input placeholder="Surname" value={surname} />
+          <Input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+          <Input placeholder="Surname" value={surname} onChange={(e) => setSurname(e.target.value)} />
         </div>
         <div className="flex flex-col gap-2">
-          <Button variant="outline">Create</Button>
-          <Button variant="outline">Update</Button>
-          <Button variant="outline">Delete</Button>
+          <Button variant="outline" onClick={handleCreate}>
+            Create
+          </Button>
+          <Button variant="outline" onClick={handleUpdate}>
+            Update
+          </Button>
+          <Button variant="outline" onClick={handleDelete}>
+            Delete
+          </Button>
         </div>
       </div>
     </div>
