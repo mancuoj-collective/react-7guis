@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Counter } from '~/components/7guis/counter'
+import { FlightBooker } from '~/components/7guis/flight-booker'
 import { TemperatureConverter } from '~/components/7guis/temperature-converter'
 import { ThemeToggle } from '~/components/theme-toggle'
 
@@ -13,6 +14,7 @@ function Index() {
       <ThemeToggle />
       <Counter />
       <TemperatureConverter />
+      <FlightBooker />
     </div>
   )
 }
