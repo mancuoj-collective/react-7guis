@@ -70,7 +70,7 @@ export function FlightBooker() {
         <Popover>
           <PopoverTrigger asChild>
             <Button
-              disabled={!(isReturn && departureDate)}
+              disabled={!isReturn || !departureDate}
               variant={'outline'}
               className={cn('justify-start text-left font-normal flex-1', !returnDate && 'text-muted-foreground')}
             >

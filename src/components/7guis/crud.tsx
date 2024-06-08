@@ -1,9 +1,9 @@
+import { CheckIcon } from '@radix-ui/react-icons'
 import { useState } from 'react'
+import { cn } from '~/utils/cn'
+import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { ScrollArea } from '../ui/scroll-area'
-import { CheckIcon } from '@radix-ui/react-icons'
-import { Button } from '../ui/button'
-import { cn } from '~/utils/cn'
 
 type Person = {
   id: number

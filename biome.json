@@ -20,8 +20,7 @@
       },
       "complexity": {
         "noVoid": "error",
-        "noExcessiveCognitiveComplexity": "warn",
-        "useSimplifiedLogicExpression": "warn"
+        "noExcessiveCognitiveComplexity": "warn"
       },
       "correctness": {
         "useHookAtTopLevel": "error",
@@ -30,6 +29,9 @@
       "style": {
         "noNonNullAssertion": "off",
         "useForOf": "warn"
+      },
+      "a11y": {
+        "useKeyWithClickEvents": "off"
       }
     }
   }
