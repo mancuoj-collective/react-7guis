@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { CircleDrawer } from '~/components/7guis/circle-drawer'
 import { Counter } from '~/components/7guis/counter'
 import { Crud } from '~/components/7guis/crud'
 import { FlightBooker } from '~/components/7guis/flight-booker'
@@ -12,15 +13,20 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex gap-3">
-        <Counter />
-        <ThemeToggle />
+    <div className="flex gap-5">
+      <div className="flex flex-col gap-3">
+        <div className="flex gap-3">
+          <Counter />
+          <ThemeToggle />
+        </div>
+        <TemperatureConverter />
+        <FlightBooker />
+        <Timer />
+        <Crud />
       </div>
-      <TemperatureConverter />
-      <FlightBooker />
-      <Timer />
-      <Crud />
+      <div className="flex flex-col gap-3">
+        <CircleDrawer />
+      </div>
     </div>
   )
 }
