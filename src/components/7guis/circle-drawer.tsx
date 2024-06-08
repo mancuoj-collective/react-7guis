@@ -28,13 +28,13 @@ export function CircleDrawer() {
     if (selectedCircle) {
       setSelected(selectedCircle)
     } else {
-      const newCircle: Circle = { cx: x, cy: y, r: 30 }
+      const newCircle: Circle = { cx: x, cy: y, r: 25 }
       setCircles((prev) => [...prev, newCircle])
     }
   }
 
   return (
-    <div className="h-80 w-96 rounded-md border">
+    <div className="h-64 w-96 rounded-md border">
       <svg ref={svgRef} width="100%" height="100%" onClick={handleClick}>
         {circles.map((circle, i) => (
           <circle

@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { Cells } from '~/components/7guis/cells'
 import { CircleDrawer } from '~/components/7guis/circle-drawer'
 import { Counter } from '~/components/7guis/counter'
 import { Crud } from '~/components/7guis/crud'
@@ -26,6 +27,7 @@ function Index() {
       </div>
       <div className="flex flex-col gap-3">
         <CircleDrawer />
+        <Cells />
       </div>
     </div>
   )
