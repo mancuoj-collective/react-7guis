@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Button } from '../ui/button'
 import { Progress } from '../ui/progress'
 import { Slider } from '../ui/slider'
-import { Button } from '../ui/button'
 
 export function Timer() {
   const [duration, setDuration] = useState(10 * 100)
@@ -65,8 +65,8 @@ export function Timer() {
           value={[duration / 100]}
           onValueChange={handleDurationChange}
           className="my-3"
-          max={30}
           min={1}
+          max={30}
           step={0.01}
         />
         <p className="w-14 text-right">{(duration / 100).toFixed(2)}s</p>
