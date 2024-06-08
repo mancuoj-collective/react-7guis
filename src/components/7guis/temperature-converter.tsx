@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Input } from '../ui/input'
-import { Separator } from '../ui/separator'
 
 export function TemperatureConverter() {
   const [c, setC] = useState(5)
