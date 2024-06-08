@@ -68,7 +68,7 @@ export function Crud() {
     <div className="flex gap-3">
       <div className="flex flex-1 flex-col gap-3">
         <Input placeholder="Filter by surname" value={filter} onChange={(e) => setFilter(e.target.value)} />
-        <ScrollArea className="flex h-52 max-h-52 flex-col rounded-md border px-1.5 py-2 text-sm">
+        <ScrollArea className="flex h-52 max-h-52 flex-col rounded-md border px-2.5 py-2 text-sm">
           {filteredList.map((person) => (
             <div
               key={person.id}
