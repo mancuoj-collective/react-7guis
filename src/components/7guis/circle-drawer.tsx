@@ -1,5 +1,6 @@
-import { useRef, useState, MouseEvent } from 'react'
+import { type MouseEvent, useRef, useState } from 'react'
 import { cn } from '~/utils/cn'
+import { Button } from '../ui/button'
 import { Slider } from '../ui/slider'
 
 type Circle = {
@@ -13,6 +14,9 @@ export function CircleDrawer() {
   const [circles, setCircles] = useState<Circle[]>([])
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [adjusting, setAdjusting] = useState(false)
+  const [history, setHistory] = useState<Circle[][]>([[]])
+  const [historyIndex, setHistoryIndex] = useState(0)
+  const [debouncedTimer, setDebouncedTimer] = useState<NodeJS.Timeout | null>(null)
 
   const handleClick = (e: MouseEvent<SVGSVGElement>) => {
     if (adjusting) {
@@ -36,8 +40,9 @@ export function CircleDrawer() {
     if (selectedCircleIndex !== -1) {
       setSelectedIndex(selectedCircleIndex)
     } else {
-      const newCircle: Circle = { cx: x, cy: y, r: 25 }
-      setCircles((prev) => [...prev, newCircle])
+      const newCircles = [...circles, { cx: x, cy: y, r: 25 }]
+      setCircles(newCircles)
+      pushHistory(newCircles)
     }
   }
 
@@ -50,6 +55,34 @@ export function CircleDrawer() {
     if (selectedIndex === null) return
     const newCircles = circles.map((circle, index) => (index === selectedIndex ? { ...circle, r: e[0] } : circle))
     setCircles(newCircles)
+
+    if (debouncedTimer) {
+      clearTimeout(debouncedTimer)
+    }
+    const timer = setTimeout(() => {
+      pushHistory(newCircles)
+    }, 300)
+    setDebouncedTimer(timer)
+  }
+
+  const pushHistory = (newCircles: Circle[] = circles) => {
+    const newHistory = [...history.slice(0, historyIndex + 1), newCircles]
+    setHistory(newHistory)
+    setHistoryIndex(newHistory.length - 1)
+  }
+
+  const undo = () => {
+    if (historyIndex > 0) {
+      setHistoryIndex(historyIndex - 1)
+      setCircles(history[historyIndex - 1])
+    }
+  }
+
+  const redo = () => {
+    if (historyIndex < history.length - 1) {
+      setHistoryIndex(historyIndex + 1)
+      setCircles(history[historyIndex + 1])
+    }
   }
 
   return (
@@ -86,6 +119,15 @@ export function CircleDrawer() {
           <Slider min={10} max={100} value={[circles[selectedIndex].r]} onValueChange={handleAdjustRadius} />
         </div>
       )}
+
+      <div className="absolute right-1 top-1">
+        <Button variant="ghost" size="icon" onClick={undo} disabled={historyIndex <= 0 || adjusting}>
+          <span className="i-lucide-undo" />
+        </Button>
+        <Button variant="ghost" size="icon" onClick={redo} disabled={historyIndex >= history.length - 1 || adjusting}>
+          <span className="i-lucide-redo" />
+        </Button>
+      </div>
     </div>
   )
 }
