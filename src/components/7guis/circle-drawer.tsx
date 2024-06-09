@@ -85,7 +85,7 @@ export function CircleDrawer() {
   }
 
   return (
-    <div className="relative h-64 w-96 rounded-md border">
+    <div className="relative w-96 flex-1 rounded-md border">
       <svg ref={svgRef} width="100%" height="100%" onClick={handleClick}>
         {circles.map((circle, i) => (
           <circle
@@ -109,10 +109,12 @@ export function CircleDrawer() {
         ))}
       </svg>
 
-      <div className="absolute inset-0 -z-10 m-auto grid h-12 w-52 gap-3">
-        <p className="text-sm text-foreground/50">Left-click to add a circle</p>
-        <p className="text-sm text-foreground/50">Right-click to adjust the radius</p>
-      </div>
+      {circles.length === 0 && (
+        <div className="absolute inset-0 -z-10 m-auto grid h-12 w-52 gap-3">
+          <p className="text-sm text-foreground/50">Left-click to add a circle</p>
+          <p className="text-sm text-foreground/50">Right-click to adjust the radius</p>
+        </div>
+      )}
 
       {adjusting && selectedIndex !== null && (
         <div

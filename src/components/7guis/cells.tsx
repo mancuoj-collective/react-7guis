@@ -1,7 +1,9 @@
+import { ScrollArea, ScrollBar } from '../ui/scroll-area'
+
 export function Cells() {
   return (
-    <div className="w-96 flex-1 rounded-md border">
-      <h1>Cells</h1>
-    </div>
+    <ScrollArea className="size-96 rounded-md border">
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
   )
 }
