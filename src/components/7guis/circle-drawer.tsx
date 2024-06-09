@@ -109,9 +109,14 @@ export function CircleDrawer() {
         ))}
       </svg>
 
+      <div className="absolute inset-0 -z-10 m-auto grid h-10 w-52 gap-3">
+        <p className="text-sm text-foreground/50">Left-click to add a circle</p>
+        <p className="text-sm text-foreground/50">Right-click to adjust the radius</p>
+      </div>
+
       {adjusting && selectedIndex !== null && (
         <div
-          className="absolute inset-0 m-auto grid h-20 w-64 rounded-md border bg-background/95 p-3"
+          className="absolute inset-0 z-10 m-auto grid h-20 w-64 rounded-md border bg-background/95 p-3"
           onClick={(e) => e.stopPropagation()}
         >
           <p>Adjust the radius {circles[selectedIndex].r}</p>
@@ -119,7 +124,7 @@ export function CircleDrawer() {
         </div>
       )}
 
-      <div className="absolute right-1 top-1">
+      <div className="absolute right-1 top-1 z-10">
         <Button variant="ghost" size="icon" onClick={undo} disabled={historyIndex <= 0 || adjusting}>
           <span className="i-lucide-undo" />
         </Button>
