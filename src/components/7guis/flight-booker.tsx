@@ -86,6 +86,7 @@ export function FlightBooker() {
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0">
             <Calendar
+              className="font-serif"
               mode="single"
               selected={returnDate}
               onSelect={setReturnDate}
