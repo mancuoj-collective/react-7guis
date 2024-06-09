@@ -63,7 +63,13 @@ export function FlightBooker() {
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0">
-            <Calendar mode="single" selected={departureDate} onSelect={handleDepartureDateChange} initialFocus />
+            <Calendar
+              className="font-serif"
+              mode="single"
+              selected={departureDate}
+              onSelect={handleDepartureDateChange}
+              initialFocus
+            />
           </PopoverContent>
         </Popover>
 
