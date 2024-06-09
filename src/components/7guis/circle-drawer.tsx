@@ -109,7 +109,7 @@ export function CircleDrawer() {
         ))}
       </svg>
 
-      <div className="absolute inset-0 -z-10 m-auto grid h-10 w-52 gap-3">
+      <div className="absolute inset-0 -z-10 m-auto grid h-12 w-52 gap-3">
         <p className="text-sm text-foreground/50">Left-click to add a circle</p>
         <p className="text-sm text-foreground/50">Right-click to adjust the radius</p>
       </div>
