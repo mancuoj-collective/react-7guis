@@ -16,7 +16,7 @@ export function CircleDrawer() {
   const [adjusting, setAdjusting] = useState(false)
   const [history, setHistory] = useState<Circle[][]>([[]])
   const [historyIndex, setHistoryIndex] = useState(0)
-  const [debouncedTimer, setDebouncedTimer] = useState<NodeJS.Timeout | null>(null)
+  const debouncedTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleClick = (e: MouseEvent<SVGSVGElement>) => {
     if (adjusting) {
@@ -56,13 +56,12 @@ export function CircleDrawer() {
     const newCircles = circles.map((circle, index) => (index === selectedIndex ? { ...circle, r: e[0] } : circle))
     setCircles(newCircles)
 
-    if (debouncedTimer) {
-      clearTimeout(debouncedTimer)
+    if (debouncedTimerRef.current) {
+      clearTimeout(debouncedTimerRef.current)
     }
-    const timer = setTimeout(() => {
+    debouncedTimerRef.current = setTimeout(() => {
       pushHistory(newCircles)
     }, 300)
-    setDebouncedTimer(timer)
   }
 
   const pushHistory = (newCircles: Circle[] = circles) => {
