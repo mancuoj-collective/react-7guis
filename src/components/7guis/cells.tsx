@@ -4,27 +4,38 @@ import { ScrollArea, ScrollBar } from '../ui/scroll-area'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
 
 export const Cells = () => {
-  const [data, setData] = useState<{ [key: string]: string }>({})
+  const [data, setData] = useState<{ [key: string]: { formula: string; value: string } }>({})
   const [editingCell, setEditingCell] = useState<string | null>(null)
   const [inputValue, setInputValue] = useState('')
+  const [dependencies, setDependencies] = useState<{ [key: string]: string[] }>({})
 
   useEffect(() => {
-    const updatedData: { [key: string]: string } = {}
+    const updatedData: { [key: string]: { formula: string; value: string } } = { ...data }
+    const updatedDependencies: { [key: string]: string[] } = { ...dependencies }
+
     Object.keys(data).forEach((cell) => {
-      const value = data[cell]
-      if (value && value.startsWith('=')) {
-        const evaluatedValue = evaluateFormula(value.slice(1), getCellValue)
-        updatedData[cell] = isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString()
+      const formula = data[cell].formula
+      if (formula.startsWith('=')) {
+        const matches = formula.match(/([A-Z]\d+)/g)
+        if (matches) {
+          updatedDependencies[cell] = matches
+        } else {
+          updatedDependencies[cell] = []
+        }
+        const evaluatedValue = evaluateFormula(formula.slice(1), getCellValue)
+        updatedData[cell].value = isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString()
       } else {
-        updatedData[cell] = value
+        updatedData[cell].value = formula
       }
     })
+
     setData(updatedData)
+    setDependencies(updatedDependencies)
   }, [data])
 
   const handleDoubleClick = (cell: string) => {
     setEditingCell(cell)
-    setInputValue(data[cell] || '')
+    setInputValue(data[cell]?.formula || '')
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +44,11 @@ export const Cells = () => {
 
   const handleInputBlur = () => {
     if (editingCell) {
-      setData((prevData) => ({ ...prevData, [editingCell]: inputValue }))
+      setData((prevData) => ({
+        ...prevData,
+        [editingCell]: { formula: inputValue, value: prevData[editingCell]?.value || '' },
+      }))
+      updateDependentCells(editingCell)
       setEditingCell(null)
     }
   }
@@ -45,11 +60,11 @@ export const Cells = () => {
   }
 
   const getCellValue = (cell: string) => {
-    const value = data[cell]
-    if (value && value.startsWith('=')) {
-      return evaluateFormula(value.slice(1), getCellValue)
+    const formula = data[cell]?.formula
+    if (formula && formula.startsWith('=')) {
+      return evaluateFormula(formula.slice(1), getCellValue)
     }
-    return parseFloat(value) || 0
+    return parseFloat(formula) || 0
   }
 
   const evaluateFormula = (formula: string, getCellValue: (cell: string) => number): number => {
@@ -61,9 +76,25 @@ export const Cells = () => {
     }
   }
 
+  const updateDependentCells = (cell: string) => {
+    Object.keys(dependencies).forEach((dependentCell) => {
+      if (dependencies[dependentCell].includes(cell)) {
+        const formula = data[dependentCell].formula.slice(1)
+        const evaluatedValue = evaluateFormula(formula, getCellValue)
+        setData((prevData) => ({
+          ...prevData,
+          [dependentCell]: {
+            formula: prevData[dependentCell].formula,
+            value: isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString(),
+          },
+        }))
+      }
+    })
+  }
+
   return (
-    <Table>
-      <ScrollArea className="size-96 rounded-md border">
+    <ScrollArea className="size-96 rounded-md border">
+      <Table>
         <TableHeader>
           <TableRow>
             <TableHead className="min-w-12 border-r text-center">#</TableHead>
@@ -92,7 +123,7 @@ export const Cells = () => {
                         autoFocus
                       />
                     ) : (
-                      data[cell]
+                      data[cell]?.value || ''
                     )}
                   </TableCell>
                 )
@@ -100,8 +131,8 @@ export const Cells = () => {
             </TableRow>
           ))}
         </TableBody>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
-    </Table>
+      </Table>
+      <ScrollBar orientation="horizontal" />
+    </ScrollArea>
   )
 }
