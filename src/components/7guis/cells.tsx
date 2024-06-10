@@ -122,7 +122,7 @@ export const Cells = () => {
           <TableRow>
             <TableHead className="min-w-12 border-r text-center">#</TableHead>
             {Array.from({ length: 26 }).map((_, i) => (
-              <TableHead key={i} className="min-w-[80px] border-r text-center">
+              <TableHead key={i} className="min-w-[72px] border-r text-center">
                 {String.fromCharCode(65 + i)}
               </TableHead>
             ))}
@@ -131,14 +131,14 @@ export const Cells = () => {
         <TableBody>
           {Array.from({ length: 100 }).map((_, rowIndex) => (
             <TableRow key={rowIndex} className="h-12">
-              <TableCell className="border-r text-center">{rowIndex}</TableCell>
+              <TableCell className="border-r text-center text-muted-foreground">{rowIndex}</TableCell>
               {Array.from({ length: 26 }).map((_, colIndex) => {
                 const cell = `${String.fromCharCode(65 + colIndex)}${rowIndex}`
                 return (
                   <TableCell key={colIndex} onDoubleClick={() => handleDoubleClick(cell)} className="text-center">
                     {editingCell === cell ? (
                       <Input
-                        className="h-7 w-[62px] rounded-none px-1 py-1 text-sm"
+                        className="h-7 w-[56px] rounded-none px-1 py-1 text-sm"
                         value={inputValue}
                         onChange={handleInputChange}
                         onBlur={handleInputBlur}

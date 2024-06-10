@@ -61,7 +61,7 @@ export function CircleDrawer() {
     }
     debouncedTimerRef.current = setTimeout(() => {
       pushHistory(newCircles)
-    }, 300)
+    }, 500)
   }
 
   const pushHistory = (newCircles: Circle[] = circles) => {
@@ -94,7 +94,7 @@ export function CircleDrawer() {
             cy={circle.cy}
             r={circle.r}
             fill="none"
-            className={cn('fill-foreground/50 stroke-background stroke-2', {
+            className={cn('fill-muted-foreground stroke-muted stroke-2', {
               'fill-foreground': selectedIndex === i,
             })}
             onClick={(e) => {
@@ -111,14 +111,14 @@ export function CircleDrawer() {
 
       {circles.length === 0 && (
         <div className="absolute inset-0 -z-10 m-auto grid h-12 w-52 gap-3">
-          <p className="text-sm text-foreground/50">Left-click to add a circle</p>
-          <p className="text-sm text-foreground/50">Right-click to adjust the radius</p>
+          <p className="text-sm text-muted-foreground">Left-click to add a circle</p>
+          <p className="text-sm text-muted-foreground">Right-click to adjust the radius</p>
         </div>
       )}
 
       {adjusting && selectedIndex !== null && (
         <div
-          className="absolute inset-0 z-10 m-auto grid h-20 w-64 rounded-md border bg-background/95 p-3"
+          className="absolute inset-0 z-10 m-auto grid h-20 w-64 rounded-md border bg-background/80 p-3"
           onClick={(e) => e.stopPropagation()}
         >
           <p>Adjust the radius {circles[selectedIndex].r}</p>
