@@ -20,7 +20,8 @@
       },
       "complexity": {
         "noVoid": "error",
-        "noExcessiveCognitiveComplexity": "warn"
+        "noExcessiveCognitiveComplexity": "warn",
+        "noForEach": "off"
       },
       "correctness": {
         "useHookAtTopLevel": "error",

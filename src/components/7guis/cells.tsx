@@ -3,15 +3,38 @@ import { Input } from '../ui/input'
 import { ScrollArea, ScrollBar } from '../ui/scroll-area'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
 
+type CellData = {
+  formula: string
+  value: string
+}
+
+type DataState = {
+  [key: string]: CellData
+}
+
+type DependenciesState = {
+  [key: string]: string[]
+}
+
 export const Cells = () => {
-  const [data, setData] = useState<{ [key: string]: { formula: string; value: string } }>({})
+  const [data, setData] = useState<DataState>({
+    A0: { formula: '4', value: '4' },
+    B0: { formula: '9', value: '9' },
+    A1: { formula: '=A0+B0', value: '13' },
+    B1: { formula: '=A0*B0', value: '36' },
+    C1: { formula: '=A1+B1', value: '49' },
+  })
   const [editingCell, setEditingCell] = useState<string | null>(null)
   const [inputValue, setInputValue] = useState('')
-  const [dependencies, setDependencies] = useState<{ [key: string]: string[] }>({})
+  const [dependencies, setDependencies] = useState<DependenciesState>({
+    A1: ['A0', 'B0'],
+    B1: ['A0', 'B0'],
+    C1: ['A1', 'B1'],
+  })
 
   useEffect(() => {
-    const updatedData: { [key: string]: { formula: string; value: string } } = { ...data }
-    const updatedDependencies: { [key: string]: string[] } = { ...dependencies }
+    const updatedData = { ...data }
+    const updatedDependencies = { ...dependencies }
 
     Object.keys(data).forEach((cell) => {
       const formula = data[cell].formula
@@ -23,7 +46,7 @@ export const Cells = () => {
           updatedDependencies[cell] = []
         }
         const evaluatedValue = evaluateFormula(formula.slice(1), getCellValue)
-        updatedData[cell].value = isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString()
+        updatedData[cell].value = Number.isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString()
       } else {
         updatedData[cell].value = formula
       }
@@ -61,10 +84,10 @@ export const Cells = () => {
 
   const getCellValue = (cell: string) => {
     const formula = data[cell]?.formula
-    if (formula && formula.startsWith('=')) {
+    if (formula?.startsWith('=')) {
       return evaluateFormula(formula.slice(1), getCellValue)
     }
-    return parseFloat(formula) || 0
+    return Number.parseFloat(formula) || 0
   }
 
   const evaluateFormula = (formula: string, getCellValue: (cell: string) => number): number => {
@@ -72,7 +95,7 @@ export const Cells = () => {
       const value = new Function('getCellValue', `return ${formula.replace(/([A-Z]\d+)/g, 'getCellValue("$1")')}`)
       return value(getCellValue)
     } catch {
-      return NaN
+      return Number.NaN
     }
   }
 
@@ -85,7 +108,7 @@ export const Cells = () => {
           ...prevData,
           [dependentCell]: {
             formula: prevData[dependentCell].formula,
-            value: isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString(),
+            value: Number.isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString(),
           },
         }))
       }
