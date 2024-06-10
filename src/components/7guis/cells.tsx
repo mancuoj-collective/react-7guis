@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Input } from '../ui/input'
 import { ScrollArea, ScrollBar } from '../ui/scroll-area'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table'
@@ -7,6 +7,20 @@ export const Cells = () => {
   const [data, setData] = useState<{ [key: string]: string }>({})
   const [editingCell, setEditingCell] = useState<string | null>(null)
   const [inputValue, setInputValue] = useState('')
+
+  useEffect(() => {
+    const updatedData: { [key: string]: string } = {}
+    Object.keys(data).forEach((cell) => {
+      const value = data[cell]
+      if (value && value.startsWith('=')) {
+        const evaluatedValue = evaluateFormula(value.slice(1), getCellValue)
+        updatedData[cell] = isNaN(evaluatedValue) ? '#ERROR' : evaluatedValue.toString()
+      } else {
+        updatedData[cell] = value
+      }
+    })
+    setData(updatedData)
+  }, [data])
 
   const handleDoubleClick = (cell: string) => {
     setEditingCell(cell)
@@ -27,6 +41,23 @@ export const Cells = () => {
   const handleInputKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleInputBlur()
+    }
+  }
+
+  const getCellValue = (cell: string) => {
+    const value = data[cell]
+    if (value && value.startsWith('=')) {
+      return evaluateFormula(value.slice(1), getCellValue)
+    }
+    return parseFloat(value) || 0
+  }
+
+  const evaluateFormula = (formula: string, getCellValue: (cell: string) => number): number => {
+    try {
+      const value = new Function('getCellValue', `return ${formula.replace(/([A-Z]\d+)/g, 'getCellValue("$1")')}`)
+      return value(getCellValue)
+    } catch {
+      return NaN
     }
   }
 
