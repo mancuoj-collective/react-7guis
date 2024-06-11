@@ -12,7 +12,7 @@ function Root() {
   return (
     <div className="flex h-dvh flex-col items-center justify-center font-serif antialiased">
       <Outlet />
-      <Toaster />
+      <Toaster position="bottom-center" />
     </div>
   )
 }
