@@ -8,26 +8,29 @@ export function Timer() {
   const [elapsedTime, setElapsedTime] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
+  const startTimer = () => {
+    if (!intervalRef.current) {
+      intervalRef.current = setInterval(() => {
+        setElapsedTime((prev) => prev + 1)
+      }, 10)
+    }
+  }
+
+  const clearTimer = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+  }
+
   useEffect(() => {
     if (elapsedTime >= duration) {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
+      clearTimer()
     } else {
-      if (!intervalRef.current) {
-        intervalRef.current = setInterval(() => {
-          setElapsedTime((prev) => prev + 1)
-        }, 10)
-      }
+      startTimer()
     }
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
-    }
+    return clearTimer
   }, [elapsedTime, duration])
 
   const handleDurationChange = (value: number[]) => {
@@ -35,20 +38,14 @@ export function Timer() {
     setDuration(newDuration)
     if (elapsedTime >= newDuration) {
       setElapsedTime(newDuration)
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
+      clearTimer()
     }
   }
 
   const handleReset = () => {
     setElapsedTime(0)
-    if (!intervalRef.current) {
-      intervalRef.current = setInterval(() => {
-        setElapsedTime((prev) => prev + 1)
-      }, 10)
-    }
+    clearTimer()
+    startTimer()
   }
 
   return (
